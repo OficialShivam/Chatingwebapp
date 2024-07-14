@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Chatingweb.WebChatDataEDMX.UserAccount>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AllRagisterUser</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <script src="~/Scripts/jquery-3.7.1.js"></script>
+    <div class="row">
+        <div class="col-sm-12">
+            <table cellpadding="0" cellspacing="0" class="table table-hover table-sm">
+                <thead class="col-sm">
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Ragister</th>
+                        <th>Status</th>
+                        <th>Button</th>
+                    </tr>
+                </thead>
+                <tbody class="col-sm">
+                    @foreach (var nm in Model)
+                    {
+                        <tr>
+                            <td>@nm.UserName</td>
+                            <td>@nm.UserMobile</td>
+                            <td>@nm.UserEmail</td>
+                            <td>@nm.UserRagisterDate</td>
+                            <td>@nm.Status</td>
+                            <td>
+                                @Html.ActionLink("Delete", "Delete", new { id = nm.UserId }, new { @class = "btn btn-outline-success fs-6", role = "button" })
+
+                                @Html.ActionLink("Block", "CompanyBlock12", new { id = nm.UserId }, new { @class = "btn btn-outline-danger fs-6", role = "button" })
+
+                                @Html.ActionLink("Unblock", "UnBlockCompany", new { id = nm.UserId }, new { @class = "btn btn-outline-success fs-6", role = "button" })
+                               
+
+                            </td>
+                        </tr>
+                     }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
