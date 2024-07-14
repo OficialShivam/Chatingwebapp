@@ -1,0 +1,150 @@
+﻿@model Chatingweb.DBWorkChat.UserAccountLoginstust
+
+<!--<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <style>
+        container img {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .container img {
+            margin: auto;
+            float: none;
+            display: block;
+        }
+
+        .divider:after,
+        .divider:before {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #eee;
+        }
+    </style>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <section class="vh-100">
+            <div class="container py-5 h-100">
+                <div class="row d-flex align-items-center justify-content-center h-100">
+                    <div class="col-md-8 col-lg-7 col-xl-6">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                             class="img-fluid" alt="Phone image">
+                    </div>
+                    <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                        <img src="~/Home_Image/career.jpg" class="rounded-circle" alt="Avatar" style="width:100px;height:40%;">-->
+                        @*<div id="Loding"><img src="~/Home_Image/Iphone-spinner-2.gif" alt="Avatar" style="width:100px;height:40%; touch-action:none;"></div>*@
+                        <!--@using (Html.BeginForm("Login", "Home"))
+                        {
+                            <div class="form-outline mb-4">
+                                <input type="email" name="UserEmail" id="Name" class="form-control form-control-lg" />
+                                <label class="form-label" for="Name">Email address</label>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <input type="password" id="form1Example23" name="UserPassword" class="form-control form-control-lg" />
+                                <label class="form-label" for="form1Example23">Password</label>
+                            </div>
+                            <div class="d-flex justify-content-around align-items-center mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="check" id="form1Example3" checked />
+                                    <label class="form-check-label" for="form1Example3"> Remember me </label>
+                                </div>
+                                <a href="/Home/ForgetPassword/">Forgot password?</a>
+                            </div>
+                            <div class="text-center ">
+                                <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Sign in</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div style="background: url('/Images/group-young-friends.jpg'); height: 500px; background-repeat: no-repeat; background-size: cover; opacity: 1;">
+    <div class="bg-light min-vh-100 d-flex flex-row align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card-group d-block d-md-flex row">
+                        <div class="card col-md-7 p-4 mb-0">
+                            <div class="card-body">
+                                <h1>Login</h1>
+                                <p class="text-medium-emphasis">Sign In to your account</p>
+                                @using (Html.BeginForm("Login", "Home"))
+                                {
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">
+                                    @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
+                                    
+                                </span>
+
+                                <input type="email" name="UserEmail" id="Name" class="form-control form-control-lg" placeholder="UserEmail" />
+                            </div>
+                                <div class="input-group mb-4">
+                                    <span class="input-group-text">
+                                        @Html.ValidationMessageFor(model => model.UserPassword, "", new { @class = "text-danger" })
+                                    </span>
+                                    <input type="password" id="form1Example23" name="UserPassword" placeholder="Password" class="form-control form-control-lg" />
+                                </div>
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" value="" name="check" id="form1Example3" checked />
+                                    <label class="form-check-label" for="form1Example3"> Remember me </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button type="submit" class="btn btn-primary px-4" onclick="setcookesFn()">Login</button>
+                                        
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        @*<button class="btn btn-link px-0" type="button">Forgot password?</button>*@
+                                        <a href="/Home/ForgetPassword/">Forgot password?</a>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="card col-md-5 text-white bg-primary py-5">
+                            <div class="card-body text-center">
+                                <div>
+                                    <h2>Sign up</h2>
+                                    <p>To Click the new user Ragiter this site the best thinkig of you</p>
+                                    <button class="btn btn-lg btn-outline-light mt-3" type="submit"><a href="/Home/Signup">Register Now!</a></button>
+                                    <button type="submit" id="btnRead" formaction="@Url.Action("ReadCookie")" value="Read Cookie" />Read Cookies
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    
+</body>
+</html>
+<script>
+    function setcookesFn() {
+        const Password = document.getElementById('form1Example23').value;
+        const Name1 = document.getElementById('Name').value;
+            
+        Cookies.set('newName', Name1);
+        Cookies.set('newPassword', Password);
+     
+    }
+</script>

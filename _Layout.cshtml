@@ -1,0 +1,181 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Smart Thinking</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+   
+    <header class="h">
+        <div class="row fs-8" style="background: url('/Images/group-young-friends.jpg'); height: 10%; background-repeat: no-repeat; background-size: cover; opacity:1;">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ">
+                                <li><a href="#" class="navbar-brand"><h1 class="text-dark me-5 display-6">Freands Gupsup</h1></a></li>
+                                <li class="nav-item ">
+                                    <a class="nav-link active text-dark me-4 " aria-current="page" href="/Home/Index">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark  me-4  " href="#">Ragister Naw</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark  me-4  " href="#">About-Us</a>
+                                </li>                               
+                        </div>
+                        <!-- Example single danger button -->
+                    </div>
+                </nav>
+
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+    </header>
+    <!---------------------model------------------------------------->
+    <!-- Button trigger modal -->
+    <!-----------------end----model------------------------------------->
+    <main class="col-sm" style="background: url('/Images/group-young-friends.jpg'); height: 500px; background-repeat: no-repeat; background-size: cover; opacity: 1;">
+        @RenderBody()
+    </main>
+  
+    <footer">                       
+        <div class="container-fluid">
+            <!-- Footer -->
+            <footer class="text-center text-lg-start text-white" style="background-color: #db6930 ">
+                    
+                <!-- Grid container -->
+                <div class="container p-4 pb-0">
+                    <!-- Section: Links -->
+                    <section class="">
+                        <!--Grid row-->
+                        <div class="row">
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-3 col-sm-4">
+    <h6 class="text-uppercase mb-4 font-weight-bold">
+        Company name
+        <p><b>Smart thinking</b></p>
+    </h6>
+    <p>
+        Here working in Software devlopment and 
+        Web devlopment
+    </p>
+</div>
+                            
+                                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                                    <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                                    <p><i class="fas fa-home mr-3"></i>Farrukhabad,UP</p>
+                                    <p><i class="fas fa-envelope mr-3"></i> shivampal77707@gmail.com</p>
+                                    <p><i class="fas fa-phone mr-3"></i> +91 6307374234</p>
+                                    <p><i class="fas fa-print mr-3"></i> +91 6394785009 </p>
+                                </div>
+                            
+                         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+    <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+    <!-- Facebook -->
+    <a class="btn btn-primary btn-floating m-1"
+       style="background-color: #3b5998"
+       href="#!"
+       role="button">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <!-- Twitter -->
+    <a class="btn btn-primary btn-floating m-1"
+       style="background-color: #55acee"
+       href="#!"
+       role="button">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+    <!-- Google -->
+    <a class="btn btn-primary btn-floating m-1"
+       style="background-color: #dd4b39"
+       href="#!"
+       role="button">
+        <i class="fab fa-google"></i>
+    </a>
+
+    <!-- Instagram -->
+    <a class="btn btn-primary btn-floating m-1"
+       style="background-color: #ac2bac"
+       href="https://www.instagram.com/bsf_lover9559_satyampal/"
+       role="button">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <!-- Linkedin -->
+    <a class="btn btn-primary btn-floating m-1"
+       style="background-color: #0082ca"
+       href="#!"
+       role="button">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+    <!-- Github -->
+    <a class="btn btn-primary btn-floating m-1"
+       style="background-color: #333333"
+       href="https://github.com/OficialShivam"
+       role="button">
+        <i class="fab fa-github"></i>
+    </a>
+</div>
+
+                            
+                            
+                                                       
+                            <!-- Grid column -->
+
+                            <hr class="w-100 clearfix d-md-none" />
+
+                            <!-- Grid column -->
+                            <hr class="w-100 clearfix d-md-none" />
+
+                            <!-- Grid column -->
+                           
+                            <!-- Grid column -->
+                            <!-- Grid column -->
+                            
+                        </div>
+                        <!--Grid row-->
+                    </section>
+                    <!-- Section: Links -->
+                </div>
+                <!-- Grid container -->
+                <!-- Copyright -->
+                <div class="text-center p-3"
+                     style="background-color: rgba(0, 0, 0, 0.2)">
+                    © 2024 Copyright:
+                </div>
+                <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
+        </div>
+        <!-- End of .container -->
+    </body>
+</html>
+
