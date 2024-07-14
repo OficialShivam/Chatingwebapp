@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ChatingwebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccountPerstionaluserInfo">
+          <Key>
+            <PropertyRef Name="ChatId" />
+          </Key>
+          <Property Name="ChatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoginUserMobileNo" Type="varchar" MaxLength="20" />
+          <Property Name="LoginUserName" Type="varchar" MaxLength="45" />
+          <Property Name="AddNewUserPhone" Type="varchar" MaxLength="20" />
+          <Property Name="NewUerName" Type="varchar" MaxLength="30" />
+          <Property Name="NewuserPictureProfile" Type="varchar" MaxLength="45" />
+          <Property Name="NewUserStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Admintbl">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminName" Type="varchar" MaxLength="30" />
+          <Property Name="AdminPassword" Type="varchar" MaxLength="12" />
+          <Property Name="Mobile" Type="varchar" MaxLength="15" />
+          <Property Name="Email" Type="varchar" MaxLength="30" />
+          <Property Name="AdminCreteDate" Type="varchar" MaxLength="30" />
+          <Property Name="AdminLoginDate" Type="varchar" MaxLength="40" />
+          <Property Name="AdminStatus" Type="int" />
+          <Property Name="AdminProfile" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="UserEmail" Type="varchar" MaxLength="100" />
+          <Property Name="UserMobile" Type="varchar" MaxLength="15" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="10" />
+          <Property Name="Status" Type="int" />
+          <Property Name="UserRagisterDate" Type="varchar" MaxLength="38" />
+        </EntityType>
+        <EntityType Name="UserAccountLogin">
+          <Key>
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="LoginId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="UserEmail" Type="varchar" MaxLength="100" />
+          <Property Name="UserMobile" Type="varchar" MaxLength="15" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="10" />
+          <Property Name="UserRagisterDate" Type="varchar" MaxLength="38" />
+          <Property Name="UserLoginDate" Type="varchar" MaxLength="35" />
+          <Property Name="UserLastLoginDate" Type="varchar" MaxLength="38" />
+          <Property Name="RagisterStatus" Type="int" />
+          <Property Name="Loginstatus" Type="int" />
+        </EntityType>
+        <EntityContainer Name="ChatingwebModelStoreContainer">
+          <EntitySet Name="AccountPerstionaluserInfo" EntityType="Self.AccountPerstionaluserInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admintbl" EntityType="Self.Admintbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserAccountLogin" EntityType="Self.UserAccountLogin" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ChatingwebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserMobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="UserRagisterDate" Type="String" MaxLength="38" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="ChatingwebEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UserAccounts" EntityType="Self.UserAccount" />
+          <EntitySet Name="UserAccountLogins" EntityType="ChatingwebModel.UserAccountLogin" />
+          <EntitySet Name="AccountPerstionaluserInfoes" EntityType="ChatingwebModel.AccountPerstionaluserInfo" />
+          <EntitySet Name="Admintbls" EntityType="ChatingwebModel.Admintbl" />
+        </EntityContainer>
+        <EntityType Name="UserAccountLogin">
+          <Key>
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="LoginId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserMobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="UserRagisterDate" Type="String" MaxLength="38" FixedLength="false" Unicode="false" />
+          <Property Name="UserLoginDate" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="RagisterStatus" Type="Int32" />
+          <Property Name="Loginstatus" Type="Int32" />
+          <Property Name="UserLastLoginDate" Type="String" MaxLength="38" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AccountPerstionaluserInfo">
+          <Key>
+            <PropertyRef Name="ChatId" />
+          </Key>
+          <Property Name="ChatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoginUserMobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LoginUserName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="AddNewUserPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NewUerName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NewuserPictureProfile" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="NewUserStatus" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Admintbl">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AdminPassword" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AdminCreteDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AdminLoginDate" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="AdminStatus" Type="Int32" />
+          <Property Name="AdminProfile" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ChatingwebModelStoreContainer" CdmEntityContainer="ChatingwebEntities">
+          <EntitySetMapping Name="UserAccounts">
+            <EntityTypeMapping TypeName="ChatingwebModel.UserAccount">
+              <MappingFragment StoreEntitySet="UserAccount">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="UserMobile" ColumnName="UserMobile" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserRagisterDate" ColumnName="UserRagisterDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccountLogins">
+            <EntityTypeMapping TypeName="ChatingwebModel.UserAccountLogin">
+              <MappingFragment StoreEntitySet="UserAccountLogin">
+                <ScalarProperty Name="UserLastLoginDate" ColumnName="UserLastLoginDate" />
+                <ScalarProperty Name="Loginstatus" ColumnName="Loginstatus" />
+                <ScalarProperty Name="RagisterStatus" ColumnName="RagisterStatus" />
+                <ScalarProperty Name="UserLoginDate" ColumnName="UserLoginDate" />
+                <ScalarProperty Name="UserRagisterDate" ColumnName="UserRagisterDate" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserMobile" ColumnName="UserMobile" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountPerstionaluserInfoes">
+            <EntityTypeMapping TypeName="ChatingwebModel.AccountPerstionaluserInfo">
+              <MappingFragment StoreEntitySet="AccountPerstionaluserInfo">
+                <ScalarProperty Name="NewUserStatus" ColumnName="NewUserStatus" />
+                <ScalarProperty Name="NewuserPictureProfile" ColumnName="NewuserPictureProfile" />
+                <ScalarProperty Name="NewUerName" ColumnName="NewUerName" />
+                <ScalarProperty Name="AddNewUserPhone" ColumnName="AddNewUserPhone" />
+                <ScalarProperty Name="LoginUserName" ColumnName="LoginUserName" />
+                <ScalarProperty Name="LoginUserMobileNo" ColumnName="LoginUserMobileNo" />
+                <ScalarProperty Name="ChatId" ColumnName="ChatId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admintbls">
+            <EntityTypeMapping TypeName="ChatingwebModel.Admintbl">
+              <MappingFragment StoreEntitySet="Admintbl">
+                <ScalarProperty Name="AdminProfile" ColumnName="AdminProfile" />
+                <ScalarProperty Name="AdminStatus" ColumnName="AdminStatus" />
+                <ScalarProperty Name="AdminLoginDate" ColumnName="AdminLoginDate" />
+                <ScalarProperty Name="AdminCreteDate" ColumnName="AdminCreteDate" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+                <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
